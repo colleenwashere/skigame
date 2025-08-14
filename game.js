@@ -85,6 +85,7 @@
     "Sean and Kim - it's feeling kind of like a \"when it rain it pours\" kind of week for you, so just know that we're all behind you and here for you! - Colleen",
     // Additional messages can be added here.  They will cycle through as
     // you progress through the levels.
+    "The Cascade crew is thinking of you. Sending you big hugs and prayers. Hope you get to hold your loved ones close in this difficult time. -Laura",
     "Great job! Keep your balance and enjoy the ride!",
     "You're doing awesome – the mountain's no match for you!"
   ];
