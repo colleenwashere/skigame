@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ski Adventure Game</title>
+  <!--
+    The stylesheet keeps visual styles separate from the game logic.  It
+    defines the pale winter palette and basic layout for the canvas and
+    on‑screen messages.  Feel free to tweak colours or sizing here to
+    suit your own aesthetic.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--
+    The canvas is where all of the action happens.  It is sized to
+    600×800 pixels by default, but those values can be adjusted via
+    attributes or CSS.  The surrounding container centers the game on
+    the page.
+  -->
+  <div class="game-wrapper">
+    <canvas id="gameCanvas" width="600" height="800"></canvas>
+    <!-- Pause overlay is displayed when the player catches a fish.  It
+         covers the entire game area and shows a large baseball player
+         illustration alongside a speech bubble with the catch
+         message.  Pressing the space bar hides this overlay and
+         resumes play. -->
+    <div id="pauseOverlay" class="pause-overlay" style="display:none;">
+      <div class="pause-content">
+        <img class="pause-image" alt="Announcer" />
+        <div class="pause-message">Message goes here</div>
+        <div class="pause-instruction">Press space to continue</div>
+      </div>
+    </div>
+    <!--
+      Scoreboard shows the number of fish caught and the current
+      level.  It lives in the lower left corner of the game wrapper
+      and updates in real time.
+    -->
+    <div id="scoreboard">Fish: 0 | Level: 1</div>
+  </div>
+  <!--
+    The game logic is defined in a separate JavaScript file.  Keeping
+    it outside of the HTML makes it easier to reason about and reuse.
+  -->
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/*
+  Base styles for the skiing adventure game.  Colours and
+  positioning are inspired by a calm winter palette.  Adjust
+  variables here to fine‑tune the look and feel without changing
+  the game logic.
+*/
+
+/* Reset default margins and ensure the page takes up the full
+   viewport height. */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #e0f2f1; /* pale blue background reminiscent of a clear winter sky */
+  color: #37474f;           /* dark greyish-blue for text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper centres the game canvas on the page and ensures it
+   doesn't exceed the viewport width on small screens. */
+.game-wrapper {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Canvas takes up the full width of the wrapper.  Its height is
+   defined in the HTML attributes. */
+canvas {
+  display: block;
+  width: 100%;
+  /* Apply a wintry mountain landscape behind the game canvas.  The
+     background image scales to cover the entire canvas and helps
+     integrate the artwork seamlessly into the scene. */
+  background-image: url('images/mountain_bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+/*
+  Pause overlay styles.  When shown it covers the entire viewport with a
+  semi‑transparent backdrop and centres its content both vertically and
+  horizontally.  It does not intercept pointer events except for the
+  inner content which remains focusable.
+*/
+#pauseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.pause-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.pause-image {
+  width: 200px;
+  height: auto;
+  user-select: none;
+}
+
+.pause-message {
+  font-size: 20px;
+  color: #37474f;
+}
+
+.pause-instruction {
+  font-size: 14px;
+  color: #546e7a;
+  margin-top: 8px;
+}
+
+/* Scoreboard lives in the lower left corner of the game wrapper. */
+#scoreboard {
+  position: absolute;
+  /* Lift the scoreboard up so it's easier to see.  The previous
+     placement was flush with the bottom edge; shifting it upward
+     approximately an inch (roughly 60–80 pixels) improves
+     visibility above the player. */
+  bottom: 72px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #37474f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
